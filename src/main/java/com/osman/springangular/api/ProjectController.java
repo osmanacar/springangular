@@ -2,13 +2,14 @@ package com.osman.springangular.api;
 
 import com.osman.springangular.dto.ProjectDto;
 import com.osman.springangular.service.implementation.ProjectServiceImplementation;
+import com.osman.springangular.util.ApiPaths;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/project")
+@RequestMapping(ApiPaths.ProjectCtrl.CRTL)
 public class ProjectController {
     /*
     Http metodlari:  GET,POST,PUT,DELETE

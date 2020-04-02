@@ -38,7 +38,8 @@ public class IssueServiceImplementation implements IssueService {
 
     @Override
     public IssueDto getById(Long id) {
-        return null;
+        Issue issue = issueRepository.getOne(id);
+        return modelMapper.map(issue, IssueDto.class);
     }
 
     @Override
@@ -51,7 +52,13 @@ public class IssueServiceImplementation implements IssueService {
     }
 
     @Override
-    public Boolean delete(IssueDto issue) {
+    public Boolean delete(Long issueId) {
+        issueRepository.deleteById(issueId);
+        return true;
+    }
+
+    @Override
+    public IssueDto update(Long id, IssueDto issueDto) {
         return null;
     }
 }
